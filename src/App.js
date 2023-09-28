@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Login from "./features/auth/Login";
+import SignUp from "./features/auth/SignUp";
+import Welcome from "./features/welcome/Welcome";
+import MenuFeed from "./features/Menu/MenuFeed";
+import ConfirmOrder from "./features/Order/ConfirmOrder";
+import CancelOrder from "./features/Cancel Order/CancelOrder";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
+
+      <Route path="/welcome" element={<Layout/>}>
+        <Route index element={<Welcome/>}/>
+        <Route path="menu/:cafe_id" element={<MenuFeed/>}/>
+      </Route>
+      <Route path="order/:order_id" element={<ConfirmOrder/>}/>
+      <Route path="cancelOrder" element={<CancelOrder/>}/>
+        
+
+    </Routes>
   );
 }
 
