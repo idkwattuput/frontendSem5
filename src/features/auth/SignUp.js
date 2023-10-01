@@ -47,7 +47,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className='flex bg-slate-200'>
+		<div className='flex bg-slate-100 font-Poppins'>
 			<img src="https://i.pinimg.com/564x/f1/e2/82/f1e282268c878b2e7897b4e4528b1bb1.jpg" alt="" className="h-screen drop-shadow-lg"/>
 			<div className="flex flex-col justify-center items-start m-auto">
 				<h1 className="font-bold text-5xl text-center mb-10">Sign Up</h1>
@@ -113,7 +113,7 @@ const SignUp = () => {
 							{faculty ? 'Faculty' : 'Faculty'}
 						</label>
 					</div>
-					<input type="submit" value="Sign Up" className="rounded w-full px-3 py-2 transition ease-in-out delay-60 bg-yellow-400 hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 duration-300 font-medium" />
+					<input type="submit" value="Sign Up" className="rounded w-full px-3 py-2 transition ease-in-out delay-60 bg-[#c4942f]  hover:-translate-y-1 hover:scale-110  hover:text-white hover:bg-black duration-300 font-medium" />
 				</form>
 				<p className="text-center text-sm mt-4">
 					Already have an account?{' '}

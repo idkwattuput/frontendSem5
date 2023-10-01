@@ -118,38 +118,38 @@ const ItemFeed = () => {
 	};
 
 	return (
-		<div className="flex justify-center items-center gap-4 p-4">
-			{data.map((item) => (
-				<div key={item.item_id} className="border-2 border-slate-500 rounded-lg w-80 p-4">
-					<img src={item.item_image_url} alt="" className="rounded-lg w-52" />
-					<div className="flex justify-between items-center">
-						<p>{item.item_name}</p>
-						<p>{item.price}</p>
+			<div className="flex justify-center items-center gap-4 p-4">
+				{data.map((item) => (
+					<div key={item.item_id} className="border-2 border-slate-500 rounded-lg w-80 p-4">
+						<img src={item.item_image_url} alt="" className="rounded-lg w-52" />
+						<div className="flex justify-between items-center">
+							<p>{item.item_name}</p>
+							<p>{item.price}</p>
+						</div>
+						<button className="rounded bg-blue-500 px-4" onClick={() => addToCart(item)}>
+							Add Cart
+						</button>
 					</div>
-					<button className="rounded bg-blue-500 px-4" onClick={() => addToCart(item)}>
-						Add Cart
-					</button>
-				</div>
-			))}
+				))}
 
-			{/* Display the shopping cart */}
-			<div>
-				<h2>Shopping Cart</h2>
-				{cart.map(
-					(cartItem) =>
-						cartItem.quantity > 0 && ( // Only render if quantity is greater than 0
-							<div key={cartItem.item_id}>
-								<p>{cartItem.item_name}</p>
-								<p>Quantity: {cartItem.quantity}</p>
-								{/* Quantity adjustment buttons */}
-								<button onClick={() => increaseQuantity(cartItem)}>+</button>
-								<button onClick={() => decreaseQuantity(cartItem)}>-</button>
-							</div>
-						)
-				)}
-				<button onClick={confirmOrder}>Confirm Order</button>
+				{/* Display the shopping cart */}
+				<div>
+					<h2>Shopping Cart</h2>
+					{cart.map(
+						(cartItem) =>
+							cartItem.quantity > 0 && ( // Only render if quantity is greater than 0
+								<div key={cartItem.item_id}>
+									<p>{cartItem.item_name}</p>
+									<p>Quantity: {cartItem.quantity}</p>
+									{/* Quantity adjustment buttons */}
+									<button onClick={() => increaseQuantity(cartItem)}>+</button>
+									<button onClick={() => decreaseQuantity(cartItem)}>-</button>
+								</div>
+							)
+					)}
+					<button onClick={confirmOrder}>Confirm Order</button>
+				</div>
 			</div>
-		</div>
 	);
 };
 

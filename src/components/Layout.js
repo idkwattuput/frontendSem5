@@ -5,8 +5,7 @@ import Header from './Header'
 
 const Layout = () => {
   return (
-    <div className='font-poppins bg-slate-200'>
-        <Header/>
+    <div className='font-Poppins bg-slate-200 min-h-screen'>
         <Outlet/>
         <hr className='border-slate-800'/>
         <Footer/>
